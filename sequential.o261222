@@ -1,0 +1,25 @@
+setting dmc scratch directory
+ 
+============================================================
+=====         Summary of your script job               =====
+============================================================
+  The script file is: myscript.sh
+  The time limit is 01:00:00 HH:MM:SS.
+  The target directory is: /home/uabcls17/HW5
+  The working directory is:  /scratch-local/uabcls17.sequential.261222
+  The memory limit is: 1gb
+  The job will start running after: 2019-04-10T17:39:15
+  Job Name: sequential
+  Virtual queue: class
+  QOS: --qos=class
+  Constraints: --constraint=dmc201
+  Using  1  cores on master node  dmc201
+  Node list:  dmc201
+  Nodes:  dmc201
+  Command typed:
+/apps/scripts/run_script myscript.sh     
+  Queue submit command:
+sbatch --qos=class -J sequential --begin=2019-04-10T17:39:15 --requeue --mail-user=johnds39@uab.edu -o sequential.o261222 -t 01:00:00 -N 1-1 -n 1 --mem-per-cpu=1000mb --constraint=dmc201  
+Time taken = 344.509673 seconds
+Time taken = 343.065910 seconds
+Time taken = 339.407616 seconds

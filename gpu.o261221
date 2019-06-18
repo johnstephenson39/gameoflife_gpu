@@ -1,0 +1,27 @@
+setting dmc scratch directory
+ 
+============================================================
+=====         Summary of your script job               =====
+============================================================
+  The script file is: myscript.sh
+  The time limit is 00:30:00 HH:MM:SS.
+  The target directory is: /home/uabcls17/HW5
+  The working directory is:  /scratch-local/uabcls17.gpu.261221
+  The memory limit is: 1gb
+  The job will start running after: 2019-04-10T17:30:42
+  Job Name: gpu
+  Virtual queue: class
+  QOS: --qos=class
+  Constraints: 
+  Using  1  cores on master node  dmc201
+  Node list:  dmc201
+  Nodes:  dmc201
+  Command typed:
+/apps/scripts/run_gpu myscript.sh     
+  Queue submit command:
+sbatch --qos=class -J gpu --begin=2019-04-10T17:30:42 --requeue --mail-user=johnds39@uab.edu -o gpu.o261221 -t 00:30:00 --gres=gpu:1 -N 1-1 -n 1 --mem-per-cpu=1000mb   
+ 
+Assigning GPU 0 to this job.
+Time taken = 23.760000 seconds
+Time taken = 23.780000 seconds
+Time taken = 23.770000 seconds
