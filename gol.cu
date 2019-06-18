@@ -1,8 +1,5 @@
 /*
 Name: John Stephenson
-BlazerId: johnds39
-Course Section: CS 432
-Homework #: 5
 */
 
 #include <cstdlib>
@@ -30,7 +27,7 @@ __global__
 void nextGeneration(int* table, int* nextGen, int N2) {
 
 	int j = blockDim.x * blockIdx.x + threadIdx.x + 1;
-	
+
 	for (int i = 1; i < N2-1; i++){
 		if (j < N2-1) {
 			int localChange = 0;
@@ -43,12 +40,12 @@ void nextGeneration(int* table, int* nextGen, int N2) {
 			neighbors += table[N2 * (i+1) + (j+1)];
 			neighbors += table[N2 * i + (j+1)];
 			neighbors += table[N2 * i + (j-1)];
-	
+
 			if (table[N2 * i + j] == DEAD && neighbors == 3) {
 				nextGen[N2 * i + j] = ALIVE;
 				localChange = 1;
 			}
-	
+
 			if (neighbors <= 1 || neighbors >= 4) {
 				if (table[N2 * i + j] == ALIVE) {
 					nextGen[N2 * i + j] = DEAD;
@@ -60,7 +57,7 @@ void nextGeneration(int* table, int* nextGen, int N2) {
 			if(localChange == 0) {
 				nextGen[N2 * i + j] = table[N2 * i + j];
 			}
-	
+
 		}
 	}
 }
@@ -92,7 +89,7 @@ int main(int argc, char *argv[]){
 	srand(time(NULL));
 
 	//freopen("output2.txt", "w", stdout);
-	
+
 	const int N2 = N + 2;
 
 	int *table;
